@@ -52,33 +52,35 @@ function reloadPage() {
 </script>
 
 <template>
-  <div>
-    <a href="https://wxt.dev" target="_blank">
-      <img src="/wxt.svg" class="logo" alt="WXT logo" />
-    </a>
-  </div>
-
-  <Title msg="PROSO" />
-
-  <div>
-    <h2>Censor Words</h2>
-    <form @submit.prevent="addWord">
-      <input v-model="newWord" placeholder="Word to censor" required />
-      <button type="submit">Add</button>
-    </form>
-
-    <div v-if="showReloadButton" class="reload-notice">
-      <p>Changes made! Reload the page to apply censorship.</p>
-      <button @click="reloadPage" class="reload-btn">Reload Page</button>
+  <UApp>
+    <div>
+      <a href="https://wxt.dev" target="_blank">
+        <img src="/wxt.svg" class="logo" alt="WXT logo" />
+      </a>
     </div>
 
-    <ul>
-      <li v-for="(word, i) in censorWords" :key="word">
-        <strong>{{ i + 1 }}. {{ word }}</strong>
-        <button @click="removeWord(word)">Remove</button>
-      </li>
-    </ul>
-  </div>
+    <Title msg="PROSO" />
+
+    <div>
+      <h2>Censor Words</h2>
+      <form @submit.prevent="addWord">
+        <input v-model="newWord" placeholder="Word to censor" required />
+        <button type="submit">Add</button>
+      </form>
+
+      <div v-if="showReloadButton" class="reload-notice">
+        <p>Changes made! Reload the page to apply censorship.</p>
+        <button @click="reloadPage" class="reload-btn">Reload Page</button>
+      </div>
+
+      <ul>
+        <li v-for="(word, i) in censorWords" :key="word">
+          <strong>{{ i + 1 }}. {{ word }}</strong>
+          <button @click="removeWord(word)">Remove</button>
+        </li>
+      </ul>
+    </div>
+  </UApp>
 </template>
 
 <style scoped>

@@ -1,4 +1,5 @@
 import { defineConfig } from "wxt";
+import ui from "@nuxt/ui/vite";
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
@@ -7,4 +8,7 @@ export default defineConfig({
   manifest: {
     permissions: ["storage"],
   },
+  vite: () => ({
+    plugins: [ui()],
+  }),
 });
