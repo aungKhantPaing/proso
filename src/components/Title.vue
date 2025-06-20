@@ -7,12 +7,10 @@ defineProps({
 </script>
 
 <template>
-  <h1 style="font-family: 'Brush Script MT', cursive; font-size: 3em">
-    {{ msg }}
-  </h1>
-  <p style="font-size: 1.2em; color: #666; margin-top: -1em">
-    Filter the distractions
-  </p>
+  <div class="flex flex-col items-center justify-center">
+    <h1 class="text-2xl font-bold">{{ msg }}</h1>
+    <p class="text-sm text-gray-500">Filter the distractions</p>
+  </div>
 </template>
 
 <style scoped>

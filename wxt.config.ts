@@ -7,6 +7,9 @@ export default defineConfig({
   srcDir: "src",
   manifest: {
     permissions: ["storage"],
+    action: {
+      default_popup: "src/entrypoints/popup/index.html",
+    },
   },
   vite: () => ({
     plugins: [ui()],
