@@ -11,7 +11,7 @@ const showReloadButton = ref(false);
 // Load from storage on mount
 onMounted(async () => {
   censorWords.value = await storage.get("censorWords").then((e) => {
-    return Array.from(e.censorWords);
+    return e.censorWords ? Array.from(e.censorWords) : [];
   });
 
   console.log({ censorWords: censorWords.value });
